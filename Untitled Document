@@ -1,0 +1,919 @@
+From https://github.com/OrionQuest/Nova_Examples
+   c1edc9e..8b7050d  master     -> origin/master
+Updating c1edc9e..8b7050d
+Fast-forward
+ embedded_deformables/Neo_Hookean.h                      |  2 ++
+ embedded_deformables/Position_Based_State.h             | 13 +++++++------
+ embedded_deformables/Position_Based_State_Neo_Hookean.h |  8 ++++----
+ embedded_deformables/Rotated_Stress_Derivative.cpp      | 18 ++++++++++--------
+ embedded_deformables/Rotated_Stress_Derivative.h        |  7 ++++---
+ 5 files changed, 27 insertions(+), 21 deletions(-)
+aiying@fermi:/data/aiying/Nova/Projects/Nova_Examples$ cd -
+/data/aiying/Nova/build
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[ 18%] Built target _nova_tools
+[ 20%] Built target plugin_Assimp_miniball
+[ 44%] Built target opengl_kernel
+[ 47%] Built target astrocytes_2d
+[ 51%] Built target point_process
+[ 51%] Built target ClassGridUnitTest
+[ 57%] Built target opengl
+[ 57%] Built target _nova_spgrid
+[ 62%] Built target plugin_Assimp
+[ 64%] Built target plugin_Grid
+[ 74%] Built target _nova_geometry
+Scanning dependencies of target poisson_2d
+Scanning dependencies of target plugin_Adaptive_Poisson_Systems
+[ 77%] Built target plugin_TextFileRenderer
+[ 79%] Built target plugin_FreeTypeRenderer
+Scanning dependencies of target embedded_deformables_2d
+Scanning dependencies of target embedded_deformables_3d
+[ 80%] Building CXX object Projects/Adaptive_Poisson_Systems/plugin_Adaptive_Poisson_Systems/CMakeFiles/plugin_Adaptive_Poisson_Systems.dir/main.cpp.o
+[ 81%] Building CXX object Projects/Adaptive_Poisson_Systems/poisson_2d/CMakeFiles/poisson_2d.dir/main.cpp.o
+[ 82%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_2d/CMakeFiles/embedded_deformables_2d.dir/main.cpp.o
+[ 83%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_3d/CMakeFiles/embedded_deformables_3d.dir/main.cpp.o
+[ 85%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_2d/CMakeFiles/embedded_deformables_2d.dir/__/Embedded_Deformables_Driver.cpp.o
+[ 86%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_2d/CMakeFiles/embedded_deformables_2d.dir/__/Rotated_Stress_Derivative.cpp.o
+[ 87%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_2d/CMakeFiles/embedded_deformables_2d.dir/__/Embedded_Deformables_Example.cpp.o
+[ 91%] Built target plugin_Embedded_Deformables
+[ 93%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_3d/CMakeFiles/embedded_deformables_3d.dir/__/Embedded_Deformables_Driver.cpp.o
+[ 94%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_3d/CMakeFiles/embedded_deformables_3d.dir/__/Embedded_Deformables_Example.cpp.o
+[ 95%] Linking CXX executable ../../../bin/poisson_2d
+[ 96%] Building CXX object Projects/Nova_Examples/embedded_deformables/embedded_deformables_3d/CMakeFiles/embedded_deformables_3d.dir/__/Rotated_Stress_Derivative.cpp.o
+[ 96%] Built target poisson_2d
+[ 97%] Linking CXX executable ../../../../bin/embedded_deformables_2d
+[ 97%] Built target embedded_deformables_2d
+[ 98%] Linking CXX executable ../../../../bin/embedded_deformables_3d
+[ 98%] Built target embedded_deformables_3d
+[100%] Linking CXX shared library ../../../lib/libplugin_Adaptive_Poisson_Systems.so
+[100%] Built target plugin_Adaptive_Poisson_Systems
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ ./bin/point_process 
+Simulation                                          0.0048 s
+aiying@fermi:/data/aiying/Nova/build$ cd ../Projects/Adaptive_Poisson_Systems/point_process/gnuplot/
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ ls
+make_plots.pl
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ mv ../../../../build/Ca.txt .
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ ls
+Ca.txt  make_plots.pl
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ ./make_plots.pl 
+Can't exec "gnuplot": No such file or directory at ./make_plots.pl line 43.
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ apt-cache search gnuplot
+bonnie++ - Hard drive benchmark suitechiark-scripts - chiark system administration scripts
+circos - plotter for visualizing data
+collectl - Utility to collect Linux performance data
+colplot - Utility to plot performance data from collectl
+context-modules - additional ConTeXt modules
+ctioga2 - polymorphic plotting program
+feedgnuplot - Pipe-oriented frontend to Gnuplot
+flowgrind - Distributed network performance measurement tool
+gausssum - parse and display Gaussian, GAMESS, and etc's output
+gnuplot - Command-line driven interactive plotting program
+gnuplot-data - Command-line driven interactive plotting program. Data-files
+gnuplot-doc - Command-line driven interactive plotting program. Doc-package
+gnuplot-mode - Gnuplot mode for Emacs
+gnuplot-nox - Command-line driven interactive plotting program. No-X package
+gnuplot-qt - Command-line driven interactive plotting program. QT-package
+gnuplot-tex - Command-line driven interactive plotting program. Tex-files
+gnuplot-x11 - Command-line driven interactive plotting program. X-package
+gnuplot5 - Command-line driven interactive plotting program, version 5
+gnuplot5-data - Command-line driven interactive plotting program. Data-files
+gnuplot5-doc - Command-line driven interactive plotting program. Doc-package
+gnuplot5-nox - Command-line driven interactive plotting program. No-X package
+gnuplot5-qt - Command-line driven interactive plotting program. QT-package
+gnuplot5-x11 - Command-line driven interactive plotting program. X-package
+hershey-font-gnuplot - Hershey vector fonts renderer for gnuplot
+jed-extra - collection of useful Jed modes and utilities
+kayali - A Qt-based Computer Algebra System
+libalien-gnuplot-perl - module to find and validate the gnuplot executable
+libchart-gnuplot-perl - module for generating two- and three-dimensional plots
+libfinance-bank-ie-permanenttsb-perl - perl interface to the PermanentTSB Open24 homebanking
+libgnuplot-iostream-dev - C++ programming interface for gnuplot. Headers
+libgnuplot-iostream-doc - C++ programming interface for gnuplot. Docs and examples
+libgnuplot-ocaml-dev - OCaml interface to the gnuplot utility
+libgraph-writer-dsm-perl - Perl module to draw Graph object as a DSM matrix
+libgraphics-gnuplotif-perl - dynamic Perl interface to gnuplot
+libpdl-graphics-gnuplot-perl - gnuplot-based plotting backend for PDL
+libploticus0 - script driven business graphics library
+libploticus0-dev - Development files for the ploticus library
+mathomatic - portable Computer Algebra System (CAS)
+python-scitools - Python library for scientific computing
+rheolef - efficient Finite Element environment
+rlplot - GUI application for generating publication quality graphs
+rubber - automated system for building LaTeX documents
+ruby-gnuplot - Ruby library to interact with gnuplot
+scidavis - application for scientific data analysis and visualization
+speedpad - ncurses tool to test, train, and increase typing speed
+stda - simple tools for data analysis (stda)
+tcptrace - Tool for analyzing tcpdump output
+texlive-latex-extra - TeX Live: LaTeX additional packages
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ sudo apt-get install gnuplot
+[sudo] password for aiying: 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ ./make_plots.pl 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ ls
+Ca.txt  Ca_values.png  make_plots.pl  plotfile
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ display Ca_values.png 
+^Z
+[1]+  Stopped                 display Ca_values.png
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ bg
+[1]+ display Ca_values.png &
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ cd ..
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ ls
+CMakeLists.txt  gnuplot  main.cpp
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ gvim main.cpp 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ ls /data/aiying/
+Nova
+[1]+  Done                    display Ca_values.png  (wd: /data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot)
+(wd now: /data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process)
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ ls /data/aiying/
+Nova
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ cd ..
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls
+astrocytes_2d  CMakeLists.txt  plugin_Adaptive_Poisson_Systems  point_process  poisson_2d  Poisson_Data.h  Randomized_Rasterizer.h  README.md
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ cd astrocytes_2d/
+(gvim:29612): GLib-GObject-WARNING **: cannot retrieve class for invalid (unclassed) type '<invalid>'
+
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ ls
+CMakeLists.txt  main.cpp
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ gvim main.cpp 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ cd ../../
+aiying@fermi:/data/aiying/Nova/Projects$ cd ..
+aiying@fermi:/data/aiying/Nova$ cd build/
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 47%] Built target ClassGridUnitTest
+[ 50%] Built target _nova_spgrid
+[ 51%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 54%] Built target point_process
+[ 64%] Built target _nova_geometry
+[ 66%] Built target opengl
+[ 68%] Built target plugin_Grid
+[ 73%] Built target plugin_Assimp
+[ 75%] Built target plugin_TextFileRenderer
+[ 78%] Built target poisson_2d
+[ 80%] Built target plugin_FreeTypeRenderer
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Char: 0
+END Simulation                                      0.0027 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 48%] Built target _nova_spgrid
+[ 50%] Built target ClassGridUnitTest
+[ 51%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 54%] Built target point_process
+[ 56%] Built target opengl
+[ 66%] Built target _nova_geometry
+[ 71%] Built target plugin_Assimp
+[ 73%] Built target plugin_Grid
+[ 75%] Built target plugin_TextFileRenderer
+[ 78%] Built target plugin_FreeTypeRenderer
+[ 80%] Built target poisson_2d
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 88%] Built target embedded_deformables_3d
+[ 94%] Built target embedded_deformables_2d
+[ 98%] Built target plugin_Embedded_Deformables
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 47%] Built target point_process
+[ 50%] Built target _nova_spgrid
+[ 60%] Built target _nova_geometry
+[ 62%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 64%] Built target ClassGridUnitTest
+[ 66%] Built target opengl
+[ 71%] Built target plugin_Assimp
+[ 73%] Built target plugin_Grid
+[ 75%] Built target plugin_TextFileRenderer
+[ 78%] Built target poisson_2d
+[ 80%] Built target plugin_FreeTypeRenderer
+[ 85%] Built target plugin_Embedded_Deformables
+[ 87%] Built target plugin_Adaptive_Poisson_Systems
+[ 93%] Built target embedded_deformables_2d
+[ 98%] Built target embedded_deformables_3d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Num: 0
+  Char: ,
+END Simulation                                      0.0025 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 48%] Built target _nova_spgrid
+[ 50%] Built target ClassGridUnitTest
+[ 52%] Built target point_process
+[ 54%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 64%] Built target _nova_geometry
+[ 66%] Built target plugin_Grid
+[ 71%] Built target plugin_Assimp
+[ 73%] Built target opengl
+[ 75%] Built target plugin_FreeTypeRenderer
+[ 78%] Built target plugin_TextFileRenderer
+[ 80%] Built target poisson_2d
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 88%] Built target embedded_deformables_2d
+[ 94%] Built target embedded_deformables_3d
+[ 98%] Built target plugin_Embedded_Deformables
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+END Simulation                                      0.0436 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 26%] Built target opengl_kernel[ 49%] Built target opengl
+[ 49%] Built target plugin_FreeTypeRenderer
+[ 51%] Built target plugin_TextFileRenderer
+[ 54%] Built target ClassGridUnitTest
+[ 56%] Built target plugin_Grid
+[ 60%] Built target plugin_Assimp
+[ 64%] Built target _nova_spgrid
+Scanning dependencies of target astrocytes_2d
+[ 74%] Built target _nova_geometry
+[ 75%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 78%] Built target plugin_Adaptive_Poisson_Systems
+[ 80%] Built target point_process
+[ 86%] Built target embedded_deformables_3d
+[ 88%] Built target poisson_2d
+[ 93%] Built target plugin_Embedded_Deformables
+[ 98%] Built target embedded_deformables_2d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Entry: 13
+END Simulation                                      0.0381 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 48%] Built target _nova_spgrid
+[ 49%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 51%] Built target point_process
+[ 54%] Built target opengl
+[ 56%] Built target plugin_Grid
+[ 58%] Built target ClassGridUnitTest
+[ 68%] Built target _nova_geometry
+[ 73%] Built target plugin_Assimp
+[ 75%] Built target plugin_FreeTypeRenderer
+[ 78%] Built target plugin_TextFileRenderer
+[ 80%] Built target plugin_Adaptive_Poisson_Systems
+[ 82%] Built target poisson_2d
+[ 88%] Built target embedded_deformables_3d
+[ 94%] Built target embedded_deformables_2d
+[ 98%] Built target plugin_Embedded_Deformables
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Entry: 10
+END Simulation                                      0.0386 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 48%] Built target _nova_spgrid
+[ 68%] Built target plugin_Grid
+[ 73%] Built target plugin_Assimp
+[ 75%] Built target plugin_FreeTypeRenderer
+[ 78%] Built target plugin_TextFileRenderer
+[ 80%] Built target poisson_2d
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 94%] Built target embedded_deformables_2d
+[ 94%] Built target embedded_deformables_3d
+[ 98%] Built target plugin_Embedded_Deformables
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Entry: 10
+END Simulation                                      0.0386 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+Scanning dependencies of target astrocytes_2d
+[ 47%] Built target point_process
+[ 48%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 59%] Built target _nova_geometry
+[ 62%] Built target _nova_spgrid
+[ 64%] Built target ClassGridUnitTest
+[ 66%] Built target plugin_Grid
+[ 71%] Built target plugin_Assimp
+[ 73%] Built target opengl
+[ 75%] Built target plugin_FreeTypeRenderer
+[ 78%] Built target plugin_TextFileRenderer
+[ 83%] Built target embedded_deformables_2d
+[ 88%] Built target plugin_Embedded_Deformables
+[ 90%] Built target poisson_2d
+[ 96%] Built target embedded_deformables_3d
+[ 98%] Built target plugin_Adaptive_Poisson_Systems
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Entry: 0
+END Simulation                                      0.0383 s
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ cd ../Projects/Adaptive_Poisson_Systems/astrocytes_2d/
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ git status
+
+        modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../point_process/gnuplot/Ca.txt
+        ../point_process/gnuplot/Ca_values.png
+        ../point_process/gnuplot/plotfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ git add main.cpp 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ meld .
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../point_process/gnuplot/Ca.txt
+        ../point_process/gnuplot/Ca_values.png
+        ../point_process/gnuplot/plotfile
+
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ git commit -m "read astrocyte geometry into a matrix"
+[master 38ff4fe] read astrocyte geometry into a matrix
+ 1 file changed, 7 insertions(+)
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use th
+
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 492 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git
+   b50316d..38ff4fe  master -> master
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d$ cd -
+/data/aiying/Nova/build
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   filesystem
+--   system
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   filesystem
+--   program_options
+--   regex
+--   system
+-- Found asset importer library: /usr/lib/x86_64-linux-gnu/libassimp.so
+-- Found asset importer library: /usr/lib/x86_64-linux-gnu/libassimp.so
+-- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
+-- Could NOT find Sphinx (missing:  SPHINX_EXECUTABLE) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /data/aiying/Nova/build
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+[ 48%] Built target _nova_spgrid
+[ 50%] Built target ClassGridUnitTest
+[ 52%] Built target point_process
+[ 63%] Built target _nova_geometry
+[ 65%] Built target plugin_FreeTypeRenderer
+[ 70%] Built target plugin_Assimp
+[ 72%] Built target plugin_Grid
+[ 74%] Built target opengl
+Scanning dependencies of target astrocytes_2d
+[ 77%] Built target plugin_TextFileRenderer
+[ 79%] Built target plugin_Adaptive_Poisson_Systems
+[ 82%] Built target poisson_2d
+[ 82%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 88%] Built target embedded_deformables_2d
+[ 94%] Built target embedded_deformables_3d
+[ 98%] Built target plugin_Embedded_Deformables
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:15:43: error: ‘T’ was not declared in this scope
+ void Rasterize(Grid_Hierarchy<Struct_type,T,d>& hierarchy,const Array<Array<unsigned>>& geometry)
+                                           ^
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:15:46: error: template argument 2 is invalid
+ void Rasterize(Grid_Hierarchy<Struct_type,T,d>& hierarchy,const Array<Array<unsigned>>& geometry)
+                                              ^
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp: In function ‘int main(int, char**)’:
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:51:33: error: no matching function for call to ‘Rasterize(Hierarchy&, Nova::Array<Nova::Array<unsigned int> >&)’
+     Rasterize(hierarchy,geometry);
+                                 ^
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:15:6: note: candidate: template<class Struct_type, int d> void Rasterize(int&, const Nova::Array<Nova::Array<unsigned int> >&)
+ void Rasterize(Grid_Hierarchy<Struct_type,T,d>& hierarchy,const Array<Array<unsigned>>& geometry)
+      ^
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:15:6: note:   template argument deduction/substitution failed:
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:51:33: note:   cannot convert ‘hierarchy’ (type ‘Hierarchy {aka Nova::Grid_Hierarchy<Nova::Poisson_Data<float>, float, 2>}’) to type ‘int&’
+     Rasterize(hierarchy,geometry);
+                                 ^
+Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/build.make:62: recipe for target 'Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o' failed
+make[2]: *** [Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o] Error 1
+CMakeFiles/Makefile2:1058: recipe for target 'Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/all' failed
+make[1]: *** [Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/all] Error 2
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 27%] Built target opengl_kernel
+[ 44%] Built target _nova_tools
+[ 47%] Built target point_process
+[ 49%] Built target plugin_TextFileRenderer
+[ 57%] Built target plugin_Grid
+[ 58%] Built target opengl
+[ 58%] Built target plugin_Assimp
+[ 60%] Built target plugin_FreeTypeRenderer
+[ 64%] Built target _nova_spgrid
+[ 66%] Built target ClassGridUnitTest
+[ 77%] Built target _nova_geometry
+Scanning dependencies of target astrocytes_2d
+[ 79%] Built target poisson_2d
+[ 81%] Built target plugin_Adaptive_Poisson_Systems
+[ 82%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 87%] Built target plugin_Embedded_Deformables
+[ 93%] Built target embedded_deformables_2d
+[ 98%] Built target embedded_deformables_3d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+[ 47%] Built target point_process
+[ 50%] Built target _nova_spgrid
+[ 52%] Built target ClassGridUnitTest
+[ 63%] Built target _nova_geometry
+[ 65%] Built target opengl
+[ 72%] Built target plugin_Assimp
+[ 72%] Built target plugin_Grid
+Scanning dependencies of target astrocytes_2d
+[ 74%] Built target plugin_FreeTypeRenderer
+[ 77%] Built target plugin_TextFileRenderer
+[ 78%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 80%] Built target poisson_2d
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 94%] Built target embedded_deformables_3d
+[ 94%] Built target embedded_deformables_2d
+[ 98%] Built target plugin_Embedded_Deformables
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Counts: 864 864
+END Simulation                                      0.0375 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+[ 47%] Built target point_process
+[ 50%] Built target ClassGridUnitTest
+[ 59%] Built target _nova_geometry
+[ 63%] Built target _nova_spgrid
+[ 65%] Built target opengl
+[ 72%] Built target plugin_Assimp
+[ 67%] Built target plugin_Grid
+[ 74%] Built target plugin_FreeTypeRenderer
+Scanning dependencies of target astrocytes_2d
+[ 77%] Built target plugin_TextFileRenderer
+[ 82%] Built target embedded_deformables_2d
+[ 87%] Built target plugin_Embedded_Deformables
+[ 93%] Built target embedded_deformables_3d
+[ 94%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 96%] Built target plugin_Adaptive_Poisson_Systems
+[ 98%] Built target poisson_2d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+  Offset: 14 14
+END Simulation                                      0.0381 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+[ 48%] Built target _nova_spgrid
+[ 50%] Built target point_process
+[ 55%] Built target ClassGridUnitTest
+[ 63%] Built target _nova_geometry
+[ 65%] Built target plugin_FreeTypeRenderer
+[ 67%] Built target plugin_Grid
+[ 70%] Built target opengl
+[ 74%] Built target plugin_Assimp
+Scanning dependencies of target astrocytes_2d
+[ 77%] Built target plugin_TextFileRenderer
+[ 79%] Built target plugin_Adaptive_Poisson_Systems
+[ 81%] Built target poisson_2d
+[ 82%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 87%] Built target plugin_Embedded_Deformables
+[ 93%] Built target embedded_deformables_2d
+[ 98%] Built target embedded_deformables_3d
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:23:41: warning: narrowing conversion of ‘(i + 1u)’ from ‘unsigned int’ to ‘int’ inside { } [-Wnarrowing]
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:23:41: warning: narrowing conversion of ‘(j + 1u)’ from ‘unsigned int’ to ‘int’ inside { } [-Wnarrowing]
+/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/astrocytes_2d/main.cpp:23:41: warning: narrowing conversion of ‘(j + 1u)’ from ‘unsigned int’ to ‘int’ inside { } [-Wnarrowing]
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 20%] Built target _nova_tools
+[ 44%] Built target opengl_kernel
+[ 47%] Built target ClassGridUnitTest
+[ 50%] Built target _nova_spgrid
+[ 60%] Built target _nova_geometry
+[ 63%] Built target point_process
+[ 65%] Built target opengl
+[ 72%] Built target plugin_Assimp
+[ 67%] Built target plugin_Grid
+Scanning dependencies of target astrocytes_2d
+[ 74%] Built target plugin_FreeTypeRenderer
+[ 77%] Built target plugin_TextFileRenderer
+[ 78%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 80%] Built target poisson_2d
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 87%] Built target plugin_Embedded_Deformables
+[ 93%] Built target embedded_deformables_2d
+[ 98%] Built target embedded_deformables_3d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+END Simulation                                      0.0442 s
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+[  2%] Built target plugin_Assimp_miniball
+[ 26%] Built target opengl_kernel
+[ 44%] Built target _nova_tools
+[ 49%] Built target plugin_Assimp
+[ 51%] Built target plugin_TextFileRenderer
+[ 54%] Built target opengl
+[ 56%] Built target plugin_FreeTypeRenderer
+[ 58%] Built target ClassGridUnitTest
+[ 60%] Built target plugin_Grid
+[ 64%] Built target _nova_spgrid
+[ 74%] Built target _nova_geometry
+Scanning dependencies of target astrocytes_2d
+[ 77%] Built target point_process
+[ 81%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 82%] Built target plugin_Adaptive_Poisson_Systems
+[ 82%] Built target poisson_2d
+[ 88%] Built target embedded_deformables_2d
+[ 93%] Built target plugin_Embedded_Deformables
+[ 98%] Built target embedded_deformables_3d
+[100%] Linking CXX executable ../../../bin/astrocytes_2d
+[100%] Built target astrocytes_2d
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+Simulation                                        
+  Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+END Simulation                                      0.0553 s
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  Resolution_864  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ ls Resolution_864/
+0  common  info.nova-animation
+aiying@fermi:/data/aiying/Nova/build$ ls Resolution_864/0/
+block_offsets  flags  levels
+aiying@fermi:/data/aiying/Nova/build$ ls Resolution_864/common/
+fine_grid  hierarchy.struct2d  log.txt
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ gvim nova.conf 
+aiying@fermi:/data/aiying/Nova/build$ 
+(gvim:1098): GLib-GObject-WARNING **: cannot retrieve class for invalid (unclassed) type '<invalid>'
+
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ./bin/opengl Resolution_864/
+Reading key bindings...
+Loading scene from 'Resolution_864/'
+Plugin libplugin_Assimp was loaded successfully.
+Plugin libplugin_FreeTypeRenderer was loaded successfully.
+Plugin libplugin_Grid was loaded successfully.
+Plugin libplugin_Adaptive_Poisson_Systems was loaded successfully.
+Levels: 6
+# of elements/block: 256
+Loaded "info.nova-animation" with id 0
+Using Object 0 as the slice provider
+Bounding Sphere is centered at  0.499421 0.499421 0.500579, and has a radius of 0.865023
+aiying@fermi:/data/aiying/Nova/build$ cd ../Projects/Adaptive_Poisson_Systems/
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls
+astrocytes_2d  CMakeLists.txt  plugin_Adaptive_Poisson_Systems  point_process  poisson_2d  Poisson_Data.h  Randomized_Rasterizer.h  README.md
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   astrocytes_2d/CMakeLists.txt
+        modified:   astrocytes_2d/main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        point_process/gnuplot/Ca.txt
+        point_process/gnuplot/Ca_values.png
+        point_process/gnuplot/plotfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls
+astrocytes_2d  CMakeLists.txt  plugin_Adaptive_Poisson_Systems  point_process  poisson_2d  Poisson_Data.h  Randomized_Rasterizer.h  README.md
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git add astrocytes_2d/CMakeLists.txt 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git add astrocytes_2d/main.cpp 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ meld .
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   astrocytes_2d/CMakeLists.txt
+        modified:   astrocytes_2d/main.cpp
+
+Untracked files:
+
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git commit -m "rasterize astrocyte geometry"
+[master b7106bf] rasterize astrocyte geometry
+ 2 files changed, 44 insertions(+)
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Password for 'https://orion_quest@bitbucket.org': 
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.45 KiB | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git
+   38ff4fe..b7106bf  master -> master
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        point_process/gnuplot/Ca.txt
+        point_process/gnuplot/Ca_values.png
+        point_process/gnuplot/plotfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ cd ../../../bui
+bash: cd: ../../../bui: No such file or directory
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ cd ../../build/
+aiying@fermi:/data/aiying/Nova/build$ ./bin/opengl Resolution_864/
+Reading key bindings...
+Loading scene from 'Resolution_864/'
+Plugin libplugin_Assimp was loaded successfully.
+Plugin libplugin_FreeTypeRenderer was loaded successfully.
+Plugin libplugin_Grid was loaded successfully.
+Plugin libplugin_Adaptive_Poisson_Systems was loaded successfully.
+Levels: 6
+# of elements/block: 256
+Loaded "info.nova-animation" with id 0
+Using Object 0 as the slice provider
+Bounding Sphere is centered at  0.499421 0.499421 0.500579, and has a radius of 0.865023
+aiying@fermi:/data/aiying/Nova/build$ ./bin/opengl Resolution_864/
+Reading key bindings...
+Loading scene from 'Resolution_864/'
+Plugin libplugin_Assimp was loaded successfully.
+Plugin libplugin_FreeTypeRenderer was loaded successfully.
+Plugin libplugin_Grid was loaded successfully.
+Plugin libplugin_Adaptive_Poisson_Systems was loaded successfully.
+Levels: 6
+# of elements/block: 256
+Loaded "info.nova-animation" with id 0
+Using Object 0 as the slice provider
+Bounding Sphere is centered at  0.499421 0.499421 0.500579, and has a radius of 0.865023
+aiying@fermi:/data/aiying/Nova/build$ cd ../Projects/Adaptive_Poisson_Systems/
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls
+astrocytes_2d  CMakeLists.txt  plugin_Adaptive_Poisson_Systems  point_process  poisson_2d  Poisson_Data.h  Randomized_Rasterizer.h  README.md
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls plugin_Adaptive_Poisson_Systems/
+Adaptive_Poisson_Systems_Renderable.h  CMakeLists.txt  main.cpp  Viewer_Data.h
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ 
+(gvim:30015): GLib-GObject-WARNING **: cannot retrieve class for invalid (unclassed) type '<invalid>'
+
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ cd point_process/
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ ls
+CMakeLists.txt  gnuplot  main.cpp
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ gvim main.cpp 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+(gvim:2412): GLib-GObject-WARNING **: cannot retrieve class for invalid (unclassed) type '<invalid>'
+
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ 
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process$ cd ..
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ ls
+astrocytes_2d  CMakeLists.txt  plugin_Adaptive_Poisson_Systems  point_process  poisson_2d  Poisson_Data.h  Randomized_Rasterizer.h  README.md
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        point_process/gnuplot/Ca.txt
+        point_process/gnuplot/Ca_values.png
+        point_process/gnuplot/plotfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems$ cd ..
+aiying@fermi:/data/aiying/Nova/Projects$ ls
+Adaptive_Poisson_Systems  CMakeLists.txt  Nova_Examples
+aiying@fermi:/data/aiying/Nova/Projects$ rm -rf Adaptive_Poisson_Systems/
+aiying@fermi:/data/aiying/Nova/Projects$ git clone https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git Adaptive_Poisson_Systems
+Cloning into 'Adaptive_Poisson_Systems'...
+Password for 'https://orion_quest@bitbucket.org': 
+remote: Invalid username or password
+fatal: Authentication failed for 'https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git/'
+aiying@fermi:/data/aiying/Nova/Projects$ git clone https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git Adaptive_Poisson_Systems
+Cloning into 'Adaptive_Poisson_Systems'...
+Password for 'https://orion_quest@bitbucket.org': 
+remote: Invalid username or password
+fatal: Authentication failed for 'https://orion_quest@bitbucket.org/orion_quest/adaptive_poisson_systems.git/'
+aiying@fermi:/data/aiying/Nova/Projects$ git clone https://mengyingaiying@bitbucket.org/orion_quest/adaptive_poisson_systems.git Adaptive_Poisson_Systems
+Cloning into 'Adaptive_Poisson_Systems'...
+Password for 'https://mengyingaiying@bitbucket.org': 
+remote: Counting objects: 50, done.
+remote: Compressing objects: 100% (47/47), done.
+remote: Total 50 (delta 19), reused 0 (delta 0)
+Unpacking objects: 100% (50/50), done.
+Checking connectivity... done.
+aiying@fermi:/data/aiying/Nova/Projects$ 
+aiying@fermi:/data/aiying/Nova/Projects$ ls
+Adaptive_Poisson_Systems  CMakeLists.txt  Nova_Examples
+aiying@fermi:/data/aiying/Nova/Projects$ cd ../build/
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  Resolution_864  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ rm -rf Resolution_864/
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts  lib  Library  Makefile  nova.conf  Projects  shaders  Tests
+aiying@fermi:/data/aiying/Nova/build$ make -j 8
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   filesystem
+--   system
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   filesystem
+--   program_options
+--   regex
+--   system
+-- Found asset importer library: /usr/lib/x86_64-linux-gnu/libassimp.so
+-- Found asset importer library: /usr/lib/x86_64-linux-gnu/libassimp.so
+-- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
+-- Could NOT find Sphinx (missing:  SPHINX_EXECUTABLE) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /data/aiying/Nova/build
+[  2%] Built target plugin_Assimp_miniball
+[ 26%] Built target opengl_kernel
+[ 44%] Built target _nova_tools
+[ 47%] Built target opengl
+[ 49%] Built target plugin_FreeTypeRenderer
+[ 54%] Built target plugin_Assimp
+[ 56%] Built target plugin_TextFileRenderer
+[ 58%] Built target ClassGridUnitTest
+[ 60%] Built target plugin_Grid
+[ 64%] Built target _nova_spgrid
+Scanning dependencies of target point_process
+[ 74%] Built target _nova_geometry
+Scanning dependencies of target plugin_Adaptive_Poisson_Systems
+Scanning dependencies of target astrocytes_2d
+Scanning dependencies of target poisson_2d
+[ 75%] Building CXX object Projects/Adaptive_Poisson_Systems/point_process/CMakeFiles/point_process.dir/main.cpp.o
+[ 80%] Built target plugin_Embedded_Deformables
+[ 81%] Building CXX object Projects/Adaptive_Poisson_Systems/plugin_Adaptive_Poisson_Systems/CMakeFiles/plugin_Adaptive_Poisson_Systems.dir/main.cpp.o
+[ 82%] Building CXX object Projects/Adaptive_Poisson_Systems/poisson_2d/CMakeFiles/poisson_2d.dir/main.cpp.o
+[ 88%] Built target embedded_deformables_2d
+[ 89%] Building CXX object Projects/Adaptive_Poisson_Systems/astrocytes_2d/CMakeFiles/astrocytes_2d.dir/main.cpp.o
+[ 95%] Built target embedded_deformables_3d
+[ 96%] Linking CXX executable ../../../bin/astrocytes_2d
+[ 96%] Built target astrocytes_2d
+[ 97%] Linking CXX executable ../../../bin/poisson_2d
+[ 97%] Built target poisson_2d
+[ 98%] Linking CXX executable ../../../bin/point_process
+[ 98%] Built target point_process
+[100%] Linking CXX shared library ../../../lib/libplugin_Adaptive_Poisson_System
+[100%] Built target plugin_Adaptive_Poisson_Systems
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ 
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  fonts
+aiying@fermi:/data/aiying/Nova/build$ ./bin/point_process 
+Simulation                                          0.0074 s
+aiying@fermi:/data/aiying/Nova/build$ ls
+bin  Ca.txt  CMakeCache.txt  CMakeFiles  cmake_install.cmake  CTestTestfile.cmak
+aiying@fermi:/data/aiying/Nova/build$ cd ../Projects/Adaptive_Poisson_Systems/po
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+make_plots.pl
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+Ca.txt  make_plots.pl
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+Ca.txt  Ca_values.png  make_plots.pl  plotfile
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+bash: ./bin/point_process: No such file or directory
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/g
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ cd ../build/ ./bin/astrocytes_2d -geometry /data/aiying/Astrocytes/star_geometry1.txt 
+bash: cd: ../build/: No such file or directory
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$ Simulation                                        
+Simulation: command not found
+aiying@fermi:/data/aiying/Nova/Projects/Adaptive_Poisson_Systems/point_process/gnuplot$   Geometry File: /data/aiying/Astrocytes/star_geometry1.txt
+
+

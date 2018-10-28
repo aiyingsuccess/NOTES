@@ -89,4 +89,6 @@ git pull origin develop:develop
    y--copy mode
    p--paste mode
 
-
+12 git remote add origin git@github.com:michaelliao/learngit.git
+git push -u origin master第一次推送master分支的所有内容
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改

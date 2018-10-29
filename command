@@ -89,9 +89,14 @@ git pull origin develop:develop
    y--copy mode
    p--paste mode
 
-12 git remote add origin git@github.com:michaelliao/learngit.git
-git push -u origin master第一次推送master分支的所有内容
+12 ssh-keygen -t rsa -C "youremail@example.com"
+
+git init local file
+git remote add origin git@github.com:michaelliao/learngit.git                                    origin is the name of remote respotory
+
+git push -u origin master      master is local repotory 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
+
+git push origin master     把本地master分支的最新修改推送至GitHub
 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改
 
-
-git commit操作的是本地库，git push操作的是远程库
+13 git commit操作的是本地库，git push操作的是远程库

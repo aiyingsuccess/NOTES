@@ -1,0 +1,3 @@
+1. redefined error happens when some variables are defined in std library 
+even if you did not include the libraries or headers in your source file. eg:change 
+vaiabe time to timee because time is defined in the <time.h> actually I didn't include <time.h>!

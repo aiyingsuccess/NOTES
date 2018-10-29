@@ -100,3 +100,16 @@ git push origin master     把本地master分支的最新修改推送至GitHub
 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改
 
 13 git commit操作的是本地库，git push操作的是远程库
+
+14
+Some options
+-g - turn on debugging (so GDB gives more friendly output)
+-Wall - turns on most warnings
+-O or -O2 - turn on optimizations
+-o <name> - name of the output file
+-c - output an object file (.o)
+-I<include path> - specify an include directory
+-L<library path> - specify a lib directory
+-l<library> - link with library lib<library>.a
+
+15 jupyter notebook

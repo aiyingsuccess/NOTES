@@ -49,16 +49,19 @@ Ctrl+w 切换窗口
 8 tabe .. 上一级目录 tabc 关闭当前tab
 s vsp新文件
 ctrl o 返回到目录
-
-9 grep "keyword" /usr/include/*.h |grep "typedef"
-查找c++ 库函数中定义“keyword”的头文件
-
-set RMANTREE /opt/pixar/RenderManProServer-22.1
-set PATH $RMANTREE/bin:$PATH
-
 1+ctrl+g  显示vim文件名
 
+9 grep "keyword" /usr/include/*.h 
+查找c++ 库函数中定义“keyword”的头文件
 
+grep -r -i "some string" /home/yourusername
+This will find "some string" in /home/yourusername directory. The search will ignore case (-i) and recurse directories (-r)
+
+find / -type f -iname "filename*" if you want to match more files (iname:ignore case in name).
+use -type d if you want to search for directories etc. 
+
+using "sudo" before find can void many unnecessary warnings
+gr
 10 第一种方法，stash：
 
 那怎么stash本地的更新呢？直接执行：
@@ -113,3 +116,9 @@ Some options
 -l<library> - link with library lib<library>.a
 
 15 jupyter notebook
+
+16 set RMANTREE /opt/pixar/RenderManProServer-22.1
+  set PATH $RMANTREE/bin:$PATH
+
+17 how to check a lib is installed?
+ldconfig -p | grep libjpeg

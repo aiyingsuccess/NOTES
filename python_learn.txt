@@ -40,3 +40,14 @@ Programmers typically implement plug-in functionality using shared libraries, wh
 9.Pyenv:
 
 cd dir; pyenv local virtualenv_name; combine the virtualenv with dir 
+
+10.Everything in PYTHON is an object
+i = 1              -----新建一个PyIntObject对象,然后绑定到i上
+s = "abcde"        -----新建一个PyStringObject对象，绑定到s上
+def foo(): pass    -----新建一个PyFunctionObject对象， 绑定到foo上
+class C(object): pass    -----新建一个类对象，绑定到C上
+instance = C()           -----新建一个实例对象，绑定到instance上
+l = [1,2]                -----新建一个PyListObject对象，绑定到l上
+t = (1,2)                -----新建一个PyTupleObject对象，绑定到t上
+
+但是有一些是例外，他们就是python中的内建对象，比如PyInt_Type，PyString_Type，PyList_Type，他们都是全局变量，在代码中已经静态的初始化了这些类型的实现，但是这些全局变量都还要通过PyType_Ready的初始化才算真正初始化完成10.

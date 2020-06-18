@@ -1,0 +1,42 @@
+1. super() returns a delegate object to a parent class, so you call the method you want directly on it: super().area().
+
+2. self represents the instance of the class. By using the “self” keyword we can access the attributes and methods of the class in python
+
+class car(): 
+      
+    # init method or constructor 
+    def __init__(self, model, color): 
+        self.model = model 
+        self.color = color 
+          
+    def show(self): 
+        print("Model is", self.model ) 
+        print("color is", self.color ) 
+          
+# both objects have different self which  
+# contain their attributes 
+audi = car("audi a4", "blue") 
+ferrari = car("ferrari 488", "green") 
+  
+audi.show()     # same output as car.show(audi) 
+ferrari.show()  # same output as car.show(ferrari)
+
+3. debug anywhere insert "import pdb" "pdb.set_trace()" using "p functionname" to print and "n" for next
+
+4. Use a virtual environment
+
+5. To make the above program work, we need to use “global” keyword. We only need to use global keyword in a function if we want to do assignments / change them. global is not needed for printing and accessing. 
+
+6. In Windows, using an import library is sort of like using import spam; it gives you access to spam’s names, but does not create a separate copy. On Unix, linking with a library is more like from spam import *; it does create a separate copy.
+
+7.It is quite easy to add new built-in modules to Python, if you know how to program in C. Such extension modules can do two things that can’t be done directly in Python: they can implement new built-in object types, and they can call C library functions and system calls.
+
+8.Plugin:
+
+The host application provides services which the plug-in can use, including a way for plug-ins to register themselves with the host application and a protocol for the exchange of data with plug-ins. Plug-ins depend on the services provided by the host application and do not usually work by themselves. Conversely, the host application operates independently of the plug-ins, making it possible for end-users to add and update plug-ins dynamically without needing to make changes to the host application.
+
+Programmers typically implement plug-in functionality using shared libraries, which get dynamically loaded at run time, installed in a place prescribed by the host application. HyperCard supported a similar facility, but more commonly included the plug-in code in the HyperCard documents (called stacks) themselves. Thus the HyperCard stack became a self-contained application in its own right, distributable as a single entity that end-users could run without the need for additional installation-steps. Programs may also implement plugins by loading a directory of simple script files written in a scripting language like Python or Lua.
+
+9.Pyenv:
+
+cd dir; pyenv local virtualenv_name; combine the virtualenv with dir 

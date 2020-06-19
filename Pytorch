@@ -13,3 +13,7 @@ nn.Module - Neural network module. Convenient way of encapsulating parameters, w
 nn.Parameter - A kind of Tensor, that is automatically registered as a parameter when assigned as an attribute to a Module.
 autograd.Function - Implements forward and backward definitions of an autograd operation. Every Tensor operation creates at least a single Function node
 that connects to functions that created a Tensor and encodes its history.
+
+3.funtion  .view(-1,3) -1 is the dimension size depends on 3 and the total numbers
+
+4.function .data to get the raw number from tensor

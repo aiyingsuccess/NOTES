@@ -14,12 +14,21 @@ nn.Parameter - A kind of Tensor, that is automatically registered as a parameter
 autograd.Function - Implements forward and backward definitions of an autograd operation. Every Tensor operation creates at least a single Function node
 that connects to functions that created a Tensor and encodes its history.
 
+
 3.funtion  .view(-1,3) -1 is the dimension size depends on 3 and the total numbers
 
+
 4.function .data to get the raw number from tensor
+
 
 5.Remember to first initialize the models and optimizers, then load the dictionary locally.
 
 modelA = Net()
 optimModelA = optim.SGD(modelA.parameters(), lr=0.001, momentum=0.9)
+
+
+6.Saving and loading a general checkpoint model for inference or resuming training can be helpful for picking up where you last left off.
+When saving a general checkpoint, you must save more than just the model’s state_dict. It is important to also save the optimizer’s state_dict,
+as this contains buffers and parameters that are updated as the model trains. Other items that you may want to save are the epoch you left off on, 
+the latest recorded training loss.
 

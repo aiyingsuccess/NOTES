@@ -1,6 +1,4 @@
-1.
-
-torch.nn only supports mini-batches. The entire torch.nn package only supports inputs that are a mini-batch of samples, and not a single sample.
+1. torch.nn only supports mini-batches. The entire torch.nn package only supports inputs that are a mini-batch of samples, and not a single sample.
 For example, nn.Conv2d will take in a 4D Tensor of nSamples x nChannels x Height x Width.
 
 If you have a single sample, just use input.unsqueeze(0) to add a fake batch dimension.
@@ -33,13 +31,17 @@ as this contains buffers and parameters that are updated as the model trains. Ot
 the latest recorded training loss.
 
 
-7.Note that calling my_tensor.to(device) returns a new copy of my_tensor on GPU. It does NOT overwrite my_tensor. Therefore, remember to manually 
+7.When loading a model on a GPU that was trained and saved on GPU, simply convert the initialized model to a CUDA optimized model using 
+model.to(torch.device('cuda'))
+ 
+ Note that calling my_tensor.to(device) returns a new copy of my_tensor on GPU. It does NOT overwrite my_tensor. Therefore, remember to manually 
 overwrite tensors: my_tensor = my_tensor.to(torch.device('cuda')).
 
 
-8. When loading a model on a GPU that was trained and saved on CPU, set the map_location argument in the torch.load() function to cuda:device_id. This loads
+8.When loading a model on a GPU that was trained and saved on CPU, set the map_location argument in the torch.load() function to cuda:device_id. This loads
 the model to a given GPU device.
 
 Be sure to call model.to(torch.device('cuda')) to convert the model’s parameter tensors to CUDA tensors.
 
-Finally, also be sure to use the .to(torch.device('cuda')) function on all model inputs to prepare the data for the CUDA optimized model.
+Finally, also be sure to use the .to(torch.device('cuda')) function on all model inputs to prepare the data for the CUDA optimized model.  
+Make sure to call input = input.to(device) on any input tensors that you feed to the model and overwrite the input.
